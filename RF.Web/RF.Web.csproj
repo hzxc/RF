@@ -1,0 +1,175 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\Bsie\bootstrap\.travis.yml" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\CONTRIBUTING.md" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\.jshintrc" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-affix.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-alert.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-button.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-carousel.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-collapse.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-dropdown.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-modal.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-popover.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-scrollspy.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-tab.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-tooltip.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-transition.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap-typeahead.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\phantom.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\server.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-affix.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-alert.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-button.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-carousel.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-collapse.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-dropdown.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-modal.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-phantom.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-popover.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-scrollspy.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-tab.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-tooltip.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-transition.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\unit\bootstrap-typeahead.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\vendor\jquery.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\js\tests\vendor\qunit.js" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\accordion.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\alerts.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\bootstrap-ie6.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\breadcrumbs.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\button-groups.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\buttons.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\carousel.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\close.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\code.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\component-animations.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\dropdowns.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\forms.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\grid.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\hero-unit.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\labels-badges.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\layouts.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\media.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\mixins.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\modals.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\navbar.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\navs.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\pager.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\pagination.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\popovers.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\progress-bars.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\reset.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\responsive-1200px-min.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\responsive-767px-max.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\responsive-768px-979px.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\responsive-navbar.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\responsive-utilities.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\responsive.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\scaffolding.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\sprites.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\tables.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\thumbnails.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\tooltip.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\type.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\utilities.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\variables.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less-ie6\wells.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\accordion.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\alerts.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\bootstrap.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\breadcrumbs.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\button-groups.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\buttons.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\carousel.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\close.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\code.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\component-animations.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\dropdowns.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\forms.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\grid.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\hero-unit.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\labels-badges.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\layouts.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\media.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\mixins.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\modals.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\navbar.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\navs.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\pager.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\pagination.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\popovers.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\progress-bars.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\reset.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\responsive-1200px-min.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\responsive-767px-max.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\responsive-768px-979px.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\responsive-navbar.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\responsive-utilities.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\responsive.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\scaffolding.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\sprites.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\tables.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\thumbnails.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\tooltip.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\type.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\utilities.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\variables.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\less\wells.less" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\Makefile" />
+    <None Include="wwwroot\lib\Bsie\bootstrap\README.md" />
+    <None Include="wwwroot\lib\Bsie\js\bootstrap-ie.js" />
+    <None Include="wwwroot\lib\Bsie\js\jquery-1.7.2.min.js" />
+    <None Include="wwwroot\lib\layui\dist\font\iconfont.svg" />
+    <None Include="wwwroot\lib\layui\dist\layui.all.js" />
+    <None Include="wwwroot\lib\layui\dist\layui.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\carousel.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\code.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\element.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\flow.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\form.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\jquery.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\laydate.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\layedit.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\layer.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\laypage.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\laytpl.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\mobile.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\table.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\tree.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\upload.js" />
+    <None Include="wwwroot\lib\layui\dist\lay\modules\util.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RF.DataAcess\RF.DataAcess.csproj" />
+    <ProjectReference Include="..\RF.Models\RF.Models.csproj" />
+  </ItemGroup>
+
+</Project>

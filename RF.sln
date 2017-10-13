@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RF.Web", "RF.Web\RF.Web.csproj", "{5DEFB287-1451-4A34-B161-86FEEBB011A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RF.DataAcess", "RF.DataAcess\RF.DataAcess.csproj", "{8C6DC2AA-8870-4858-8263-2172E5E76D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF.Models", "RF.Models\RF.Models.csproj", "{DE21BA4E-9D62-4C7E-9B7F-2D530D6A8815}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DEFB287-1451-4A34-B161-86FEEBB011A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEFB287-1451-4A34-B161-86FEEBB011A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEFB287-1451-4A34-B161-86FEEBB011A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEFB287-1451-4A34-B161-86FEEBB011A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C6DC2AA-8870-4858-8263-2172E5E76D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C6DC2AA-8870-4858-8263-2172E5E76D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C6DC2AA-8870-4858-8263-2172E5E76D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C6DC2AA-8870-4858-8263-2172E5E76D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE21BA4E-9D62-4C7E-9B7F-2D530D6A8815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE21BA4E-9D62-4C7E-9B7F-2D530D6A8815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE21BA4E-9D62-4C7E-9B7F-2D530D6A8815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE21BA4E-9D62-4C7E-9B7F-2D530D6A8815}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53DCAA1A-D015-4E10-A524-8BA94302CFC6}
+	EndGlobalSection
+EndGlobal

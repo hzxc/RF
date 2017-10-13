@@ -1,0 +1,186 @@
+﻿
+<link href="~/lib/layui/dist/css/layui.css" rel="stylesheet" />
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script src="~/lib/layui/dist/layui.js"></script>
+<style>
+    input {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border: 1px solid red;
+        background-color: transparent;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        /*height:150px;*/
+    }
+
+    #list li {
+    }
+</style>
+
+
+
+<script>
+
+    $(function () {
+        $("#tcNum")[0].focus();
+
+        $('#tcNum').bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                $('#tcNum')[0].blur();
+                var reg = /^\d+$/;
+                if (!reg.test($('#tcNum').val())) {
+                    layui.use(['layer'], function () {
+                        layer = layui.layer
+                        layer.msg('运单号格式错误', {
+                            icon: 5,
+                            time: 2000,
+                            shade: 0.01
+                        }, function () {
+                            $('#tcNum')[0].focus();
+                            $('#tcNum').val('');
+                            $('#snNum').val('');
+                        });
+                    });
+                } else {
+                    $('#snNum')[0].focus();
+                    $('#snNum').val('');
+                }
+                //alert('你输入的内容为：' + $('#dataInput').val());
+            }
+        });
+        $('#snNum').bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                $('#snNum')[0].blur();
+                var trackingNumber = $('#tcNum').val();
+                var serialNumber = $('#snNum').val()
+
+                submit(trackingNumber, serialNumber);
+            }
+        });
+
+        function submit(trackingNumber, serialNumber) {
+            $('#tcNum')[0].blur();
+            $('#snNum')[0].blur();
+            if (trackingNumber.length == 0 || serialNumber.length == 0) {
+                layui.use(['layer'], function () {
+                    layer = layui.layer
+                    layer.msg('数据不能为空', {
+                        icon: 5,
+                        time: 2000,
+                        shade: 0.01
+                    }, function () {
+                        $('#tcNum')[0].focus();
+                        $('#tcNum').val('');
+                        $('#snNum').val('');
+                    });
+                });
+                return;
+            }
+
+            var reg = /^\d+$/;
+            if (!reg.test($('#tcNum').val())) {
+                layui.use(['layer'], function () {
+                    layer = layui.layer
+                    layer.msg('运单号格式错误', {
+                        icon: 5,
+                        time: 2000,
+                        shade: 0.01
+                    }, function () {
+                        $('#tcNum')[0].focus();
+                        $('#tcNum').val('');
+                        $('#snNum').val('');
+                    });
+                });
+                return;
+            }
+
+            $.ajax({
+                url: "/OrderPartInfo/AddInfo",
+                async: true,
+                //contentType: 'application/json',
+                dataType: 'JSON',
+                type: 'POST',
+                data: {
+                    'trackingNumber': trackingNumber,
+                    'serialNumber': serialNumber
+                },
+                success: function (result) {
+                    if (result.status == 1) {
+                        layui.use(['layer'], function () {
+                            layer = layui.layer
+                            layer.msg(result.msg, {
+                                icon: 6,
+                                time: 2000,
+                                shade: 0.01
+                            }, function () {
+                                $('#tcNum')[0].focus();
+                                $('#snNum').val('');
+                                $('#tcNum').val('');
+                                $('#list').prepend('<li style="color:green"><nobr>' + result.data + result.msg + '</nobr></li>');
+                            });
+                        });
+                    } else {
+                        layui.use(['layer'], function () {
+                            layer = layui.layer
+                            layer.msg(result.msg, {
+                                icon: 5,
+                                time: 2000,
+                                shade: 0.01
+                            }, function () {
+                                $('#tcNum')[0].focus();
+                                $('#snNum').val('');
+                                $('#tcNum').val('');
+                                $('#list').prepend('<li style="color:red"><nobr>' + result.data + result.msg + '</nobr></li>');
+                            });
+                        });
+                    }
+                },
+                error: function () {
+                    layui.use(['layer'], function () {
+                        layer = layui.layer
+                        layer.msg('错误请重试', {
+                            icon: 5,
+                            time: 2000,
+                            shade: 0.01
+                        }, function () {
+                            $('#tcNum')[0].focus();
+                            $('#snNum').val('');
+                            $('#tcNum').val('');
+                            $('#list').prepend('<li style="color:red"><nobr>' + trackingNumber + ':' + serialNumber + ':错误' + '</nobr></li>');
+                        });
+                    });
+                },
+                complete: function (xhr, status) {
+
+                }
+            });
+        }
+
+        $('#btnSubmit').click(function () {
+            var trackingNumber = $('#tcNum').val();
+            var serialNumber = $('#snNum').val()
+            submit(trackingNumber, serialNumber);
+        });
+    })
+
+</script>
+
+
+<div class="container">
+    <input type="text" id="tcNum" placeholder="运单号" class="layui-input" style="border:1px solid #2e6da4;background-color: transparent;">
+    <input type="text" id="snNum" placeholder="SN码" class="layui-input" style="border:1px solid #2e6da4;background-color: transparent;">
+    <input id="btnSubmit" class="layui-btn" type="button" value="手动提交" />
+</div>
+<div style="text-align:center">
+    <ul id="list"></ul>
+</div>
+
+
+
+
+
