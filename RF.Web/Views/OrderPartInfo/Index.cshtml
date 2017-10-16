@@ -27,6 +27,8 @@
 <script>
 
     $(function () {
+        var success = 0;
+        var error = 0;
         $("#tcNum")[0].focus();
 
         $('#tcNum').bind('keypress', function (event) {
@@ -121,7 +123,9 @@
                                 $('#tcNum')[0].focus();
                                 $('#snNum').val('');
                                 $('#tcNum').val('');
-                                $('#list').prepend('<li style="color:green"><nobr>' + result.data + result.msg + '</nobr></li>');
+                                success = success + 1;
+                                $('#msg').html('<div style="text-algin:center"><span style="color:green;">成功：' + success + '条</span>' + ',<span style="color:red">失败:' + error + '条</span></div>');
+                                $('#list').prepend('<nobr><li style="color:green;font-size:9px">' + result.data + result.msg + '</li></nobr>');
                             });
                         });
                     } else {
@@ -135,7 +139,9 @@
                                 $('#tcNum')[0].focus();
                                 $('#snNum').val('');
                                 $('#tcNum').val('');
-                                $('#list').prepend('<li style="color:red"><nobr>' + result.data + result.msg + '</nobr></li>');
+                                error = error + 1;
+                                $('#msg').html('<div style="text-align:center"><span style="color:green">成功：' + success + '条</span>' + ',<span style="color:red">失败:' + error + '条</span></div>');
+                                $('#list').prepend('<nobr><li style="color:red;font-size:9px">' + result.data + result.msg + '</li></nobr>');
                             });
                         });
                     }
@@ -151,12 +157,13 @@
                             $('#tcNum')[0].focus();
                             $('#snNum').val('');
                             $('#tcNum').val('');
-                            $('#list').prepend('<li style="color:red"><nobr>' + trackingNumber + ':' + serialNumber + ':错误' + '</nobr></li>');
+                            error = error + 1;
+                            $('#msg').html('<div style="text-align:center"><span style="color:green">成功：' + success + '条</span>' + ',<span style="color:red">失败:' + error + '条</span></div>');
+                            $('#list').prepend('<nobr><li style="color:red;font-size:9px">' + trackingNumber + ':' + serialNumber + ':错误' + '</li></nobr>');
                         });
                     });
                 },
                 complete: function (xhr, status) {
-
                 }
             });
         }
@@ -174,6 +181,7 @@
 <div class="container">
     <input type="text" id="tcNum" placeholder="运单号" class="layui-input" style="border:1px solid #2e6da4;background-color: transparent;">
     <input type="text" id="snNum" placeholder="SN码" class="layui-input" style="border:1px solid #2e6da4;background-color: transparent;">
+    <span id="msg"></span>
     <input id="btnSubmit" class="layui-btn" type="button" value="手动提交" />
 </div>
 <div style="text-align:center">
