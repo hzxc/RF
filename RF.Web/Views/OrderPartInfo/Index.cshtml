@@ -26,7 +26,24 @@
 
 <script>
 
+    
+  
+
     $(function () {
+        var fa = document.getElementById('f_main_audio');
+        var sa = document.getElementById('s_main_audio');
+       
+
+        if (!(fa.play instanceof Function)) {
+            fa = document.getElementById('f_main_audio_ie8');
+        }
+
+
+        if (!(sa.play instanceof Function)) {
+            sa = document.getElementById('s_main_audio_ie8');
+        }
+
+
         var success = 0;
         var error = 0;
         $("#tcNum")[0].focus();
@@ -40,7 +57,7 @@
                         layer = layui.layer
                         layer.msg('运单号格式错误', {
                             icon: 5,
-                            time: 2000,
+                            time: 1000,
                             shade: 0.01
                         }, function () {
                             $('#tcNum')[0].focus();
@@ -73,7 +90,7 @@
                     layer = layui.layer
                     layer.msg('数据不能为空', {
                         icon: 5,
-                        time: 2000,
+                        time: 1000,
                         shade: 0.01
                     }, function () {
                         $('#tcNum')[0].focus();
@@ -90,7 +107,7 @@
                     layer = layui.layer
                     layer.msg('运单号格式错误', {
                         icon: 5,
-                        time: 2000,
+                        time: 1000,
                         shade: 0.01
                     }, function () {
                         $('#tcNum')[0].focus();
@@ -113,11 +130,12 @@
                 },
                 success: function (result) {
                     if (result.status == 1) {
+                        sa.play();
                         layui.use(['layer'], function () {
                             layer = layui.layer
                             layer.msg(result.msg, {
                                 icon: 6,
-                                time: 2000,
+                                time: 1000,
                                 shade: 0.01
                             }, function () {
                                 $('#tcNum')[0].focus();
@@ -129,11 +147,12 @@
                             });
                         });
                     } else {
+                        fa.play();
                         layui.use(['layer'], function () {
                             layer = layui.layer
                             layer.msg(result.msg, {
                                 icon: 5,
-                                time: 2000,
+                                time: 1000,
                                 shade: 0.01
                             }, function () {
                                 $('#tcNum')[0].focus();
@@ -147,11 +166,12 @@
                     }
                 },
                 error: function () {
+                    fa.play();
                     layui.use(['layer'], function () {
                         layer = layui.layer
                         layer.msg('错误请重试', {
                             icon: 5,
-                            time: 2000,
+                            time: 1000,
                             shade: 0.01
                         }, function () {
                             $('#tcNum')[0].focus();
@@ -184,11 +204,33 @@
     <span id="msg"></span>
     <input id="btnSubmit" class="layui-btn" type="button" value="手动提交" />
 </div>
-<div style="text-align:center">
+<div style="margin-left:10px">
     <ul id="list"></ul>
 </div>
+@*<embed src="./audio/success.wav" id="audioSuccess" autostart=false play=false  hidden=true loop="false" />
+<embed src="./audio/failure.wav" id="audioFailure" autostart=false play=false  hidden="true" loop="false" />*@
 
+<audio id="s_main_audio">
+    <source src="./audio/success.wav" type="audio/mpeg" />
+    <embed id="s_main_audio_ie8" hidden="true" autostart="false" loop="false" src="./audio/success.wav" />
+</audio>
 
+<audio id="f_main_audio">
+    <source src="./audio/failure.wav" type="audio/mpeg" />
+    <embed id="f_main_audio_ie8" hidden="true" autostart="false" loop="false" src="./audio/failure.wav" />
+</audio>
+
+<script>
+    
+
+    //$('#playpause').on('click', function () {
+    //    if (isPlaying(a)) {
+    //        a.pause();
+    //    } else {
+    //        a.play();
+    //    }
+    //});
+</script>
 
 
 
